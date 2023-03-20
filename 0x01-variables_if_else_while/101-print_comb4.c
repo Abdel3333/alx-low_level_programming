@@ -20,14 +20,8 @@ int main(void)
 						putchar(a);
 						putchar(_a);
 						putchar(__a);
-						if (a + 1 == z - 2)
-						{
-							if (_a + 1 == z - 1)
-							{
-								if (__a + 1 == z)
-									break;
-							}
-						}
+						if ((a + 1 == z - 2) && (_a + 1 == z - 1) && (__a + 1 == z))
+							break;
 						putchar(44);
 						putchar(32);
 					}
