@@ -1,28 +1,44 @@
 #include <stdio.h>
 /**
- * main - a program to print a combination of two digits
+ * main - a program to print a combination of three digits
  * Return: 0
  */
 int main(void)
 {
-	int a = 48, z = 48 + 10;
+	int a = 48, z = 48 + 10, _a = 48, __a = 48;
 
-	for (int i = a; i < z; i++)
+	while (a < z)
 	{
-		for (int j = a; j < z; j++)
+		while (_a < z)
 		{
-			for (int k = a; k < z; k++)
+			if (a < _a)
 			{
-				putchar(i);
-				putchar(j);
-				putchar(k);
-				if (j != 57 && i != 57 && k != 57)
+				while (__a < z)
 				{
-					putchar(44);
-					putchar(32);
+					if (_a < __a)
+					{
+						putchar(a);
+						putchar(_a);
+						putchar(__a);
+						if (a + 1 == z - 2)
+						{
+							if (_a + 1 == z - 1)
+							{
+								if (__a + 1 == z)
+									break;
+							}
+						}
+						putchar(44);
+						putchar(32);
+					}
+					__a++;
 				}
+				__a = 48;
 			}
+			_a++;
 		}
+		_a = 48;
+		a++;
 	}
 	putchar(10);
 	return (0);
