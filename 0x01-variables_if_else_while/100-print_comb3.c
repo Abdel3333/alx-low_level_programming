@@ -5,20 +5,28 @@
  */
 int main(void)
 {
-	int a = 48, z = 48 + 10;
+	int a = 48, z = 48 + 10, _a = 48;
 
-	for (int i = a; i < z; i++)
+	while (a < z)
 	{
-		for (int j = a; j < z; j++)
+		while (_a < z)
 		{
-			putchar(i);
-			putchar(j);
-			if (j != 57 && i != 57)
+			if (a < _a)
 			{
+				putchar(a);
+				putchar(_a);
+				if (a + 1 == z - 1)
+				{
+					if (_a + 1 == z)
+						break;
+				}
 				putchar(44);
 				putchar(32);
 			}
+			_a++;
 		}
+		_a = 48;
+		a++;
 	}
 	putchar(10);
 	return (0);
