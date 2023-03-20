@@ -20,8 +20,11 @@ int main(void)
 						putchar(a);
 						putchar(_a);
 						putchar(__a);
-						if ((a + 1 == z - 2) && (_a + 1 == z - 1) && (__a + 1 == z))
-							break;
+					}
+					if (_a < __a && (a + 1 == z - 2) && (_a + 1 == z - 1) && (__a + 1 == z))
+						break;
+					if (_a < __a)
+					{
 						putchar(44);
 						putchar(32);
 					}
