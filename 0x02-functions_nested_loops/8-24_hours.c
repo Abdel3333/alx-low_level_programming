@@ -11,7 +11,7 @@ void jack_bauer(void)
 	{
 		for (j = a; j < z; j++)
 		{
-			if(i == a + 2 && j >= a + 4)
+			if (i == a + 2 && j >= a + 4)
 				break;
 			for (k = a; k < a + 6; k++)
 			{
