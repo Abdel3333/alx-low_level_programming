@@ -13,7 +13,7 @@ void print_array(int *a, int n)
 	{
 		if (i + 1 == n)
 			printf("%i", *(a + i));
-		else 
+		else
 			printf("%i, ", *(a + i));
 	}
 	printf("\n");
