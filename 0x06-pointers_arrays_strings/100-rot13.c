@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * *rot13 - encodes a string
  * @s: a string pointer
@@ -14,7 +15,9 @@ char *rot13(char *s)
 		for (j = 0; s[j] != '\0'; j++)
 		{
 			if (s[j] == alp[i])
-				*(s + j) = cod[i];
+			{
+				s[j] = cod[i];
+			}
 		}
 	}
 	return (s);
