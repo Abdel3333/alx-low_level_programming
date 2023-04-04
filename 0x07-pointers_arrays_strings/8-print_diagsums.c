@@ -7,21 +7,17 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i = 0, mem_size, sum1 = 0, sum2 = 0;
+	int i = 0, j, sum1 = 0, sum2 = 0;
 
-	mem_size = 4 * (size * size);
-	printf("%i, %i, %d", *a, i, mem_size);
-	while (i < mem_size)
+	for (i = 0; i < size; i++)
 	{
-		/*for (j = 0; j < size; j++)
+		for (j = 0; j < size; j++)
 		{
 			if (i == j)
-				sum1 += a[i + j * 4];
+				sum1 += *(a + (size + 1) * i);
 			if (j == (size - 1) - i)
-				sum2 += a[4 * (i + 1) / 2];
-		}*/	
-		sum1 += a[mem_size];
-		i =+ (size + 1) * 4;
+				sum2 += *(a + (size - 1) * (i + 1));
+		}
 	}
 	printf("%d, %d\n", sum1, sum2);
 }
