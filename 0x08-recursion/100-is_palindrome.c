@@ -2,6 +2,8 @@
 /**
  * palindrome_helper - tells if a string is a palindrome
  * @s: a pointer to string
+ * @nindex: a pointer to string
+ * @rindex: a pointer to string
  * Return: an integer
  */
 int palindrome_helper(char *s, int nindex, int rindex)
@@ -25,8 +27,8 @@ int palindrome_helper(char *s, int nindex, int rindex)
 int _strlen(char *s)
 {
 	if (!*s)
-		return 0;
-	return 1 + _strlen(s + 1);
+		return (0);
+	return (1 + _strlen(s + 1));
 }
 
 
@@ -42,6 +44,6 @@ int is_palindrome(char *s)
 	if (slength == 0)
 		return (1);
 	else
-		return palindrome_helper(s, 0, slength - 1);
+		return (palindrome_helper(s, 0, slength - 1));
 
 }
