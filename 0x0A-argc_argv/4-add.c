@@ -4,7 +4,7 @@
 
 /**
  * isnumber - check for a number
- * @n: an integer
+ * @c: a pointer to the number string
  * Return: 0 if false, 1 if true
  */
 int isnumber(char *c)
@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
 	int sum = 0, i;
 
 	if (argc == 1)
-        {
-                printf("0\n");
+	{
+		printf("0\n");
 		return (0);
-        }
+	}
 	for (i = 1; i < argc; i++)
 	{
 		if (isnumber(argv[i]) == 0)
