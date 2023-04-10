@@ -1,0 +1,4 @@
+#!/bin/bash
+for file in *.o; do
+    mv -- "$file" "${file%.o}.c"
+done
