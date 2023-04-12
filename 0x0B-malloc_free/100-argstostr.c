@@ -1,5 +1,6 @@
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * *argstostr - concatenates all the arguments of your program
  * @ac: the integer
@@ -13,22 +14,22 @@ char *argstostr(int ac, char **av)
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	arr = malloc(sizeof(av) + ac * sizeof(char));
+	arr = malloc(sizeof(*av) + ac * sizeof(char) + 1);
 	if (arr == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		while (av[i][j])
+		while (av[i][j]
 		{
+			printf("argss%s", av[i][j]);
 			*arr = av[i][j];
 			j++;
 			arr++;
 		}
 		*arr = '\n';
-		if (i + 1 != ac)
-			arr++;
+		arr++;
 		j = 0;
 	}
-	arr[i] = '\0';
+	*arr = '\0';
 	return (arr);
 }
