@@ -9,26 +9,26 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i = 0, j = 0;
+	int i = 0, j = 0, len = 0;
 	char *arr;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	arr = malloc(sizeof(*av) + ac * sizeof(char) + 1);
+	arr = malloc(sizeof(*av) *  ac);
 	if (arr == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		while (av[i][j]
+		while (av[i][len])
+			len++;
+		for (j = 0; j < len ; j++)
 		{
-			printf("argss%s", av[i][j]);
 			*arr = av[i][j];
-			j++;
 			arr++;
 		}
 		*arr = '\n';
 		arr++;
-		j = 0;
+		len = 0;
 	}
 	*arr = '\0';
 	return (arr);
