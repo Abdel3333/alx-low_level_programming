@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 		prints("Error\n");
 		exit(98);
 	}
-	mul = atoi(argv[1]) * atoi(argv[2]);
+	mul = atol(argv[1]) * atol(argv[2]);
 	printn(mul);
 	prints("\n");
 	return (0);
