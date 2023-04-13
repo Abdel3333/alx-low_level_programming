@@ -5,9 +5,9 @@
  * @str: the string pointer
  * Return: an integer
  */
-int _strlen(char *str)
+unsigned long _strlen(char *str)
 {
-	unsigned long int len = 0;
+	unsigned long len = 0;
 
 	while (str[len])
 		len++;
@@ -21,7 +21,7 @@ int _strlen(char *str)
  */
 void prints(char *str)
 {
-	unsigned long int len, i = 0;
+	unsigned long len, i = 0;
 
 	len = _strlen(str);
 	for (i = 0; i < len; i++)
@@ -33,9 +33,9 @@ void prints(char *str)
  * @n: the number
  * Return: Nothing
  */
-void printn(unsigned long int n)
+void printn(unsigned long n)
 {
-	unsigned long int div, rem;
+	unsigned long div, rem;
 
 	div = n / 10;
 	rem = n % 10;
@@ -49,9 +49,9 @@ void printn(unsigned long int n)
  * @s: the string
  * Return: 0 or 1
  */
-int isnumber(char *s)
+unsigned long isnumber(char *s)
 {
-	unsigned long int len, i;
+	unsigned long len, i;
 
 	len = _strlen(s);
 	for (i = 0; i < len; i++)
@@ -70,7 +70,7 @@ int isnumber(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int mul;
+	unsigned long mul;
 
 	if (argc != 3 || isnumber(argv[1]) == 0 || isnumber(argv[2]) == 0)
 	{
