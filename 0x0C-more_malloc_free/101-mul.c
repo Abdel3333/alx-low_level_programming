@@ -1,12 +1,13 @@
 #include "main.h"
 #include <stdlib.h>
-/** _strlen - find the length of a string
+/**
+ * _strlen - find the length of a string
  * @str: the string pointer
  * Return: an integer
  */
 int _strlen(char *str)
 {
-	int len = 0;
+	unsigned long int len = 0;
 
 	while (str[len])
 		len++;
@@ -14,13 +15,13 @@ int _strlen(char *str)
 }
 
 /**
- * printstr - print a string
+ * prints - print a string
  * @str: the string
  * Return: Nothing
  */
 void prints(char *str)
 {
-	int len, i = 0;
+	unsigned long int len, i = 0;
 
 	len = _strlen(str);
 	for (i = 0; i < len; i++)
@@ -32,9 +33,9 @@ void prints(char *str)
  * @n: the number
  * Return: Nothing
  */
-void printn(int n)
+void printn(unsigned long int n)
 {
-	int div, rem;
+	unsigned long int div, rem;
 
 	div = n / 10;
 	rem = n % 10;
@@ -50,7 +51,7 @@ void printn(int n)
  */
 int isnumber(char *s)
 {
-	int len, i;
+	unsigned long int len, i;
 
 	len = _strlen(s);
 	for (i = 0; i < len; i++)
@@ -79,4 +80,5 @@ int main(int argc, char *argv[])
 	mul = atoi(argv[1]) * atoi(argv[2]);
 	printn(mul);
 	prints("\n");
+	return (0);
 }
