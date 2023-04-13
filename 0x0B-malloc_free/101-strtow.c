@@ -1,5 +1,6 @@
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * **strtow - split a string into words
  * @str: the pointer to the string
@@ -31,7 +32,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i < wc; i++)
 	{
-		arr[i]  = malloc(sizeof(*arr[i]) * 10);
+		arr[i]  = malloc(sizeof(*arr[i]) * 15);
 		for (; j < len; j++)
 		{
 			if (str[j] != 32)
