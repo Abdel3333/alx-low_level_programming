@@ -24,21 +24,23 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		all = malloc(new_size);
 		if (all == NULL)
 			return (NULL);
-		return (all);
 	}
-	if (new_size > old_size)
+	else if (new_size > old_size)
 	{
 		all = malloc(new_size);
 		if (all == NULL)
 			return (NULL);
 		for (i = 0; i < old_size; i++)
 			((char *)all)[i] = ((char *)ptr)[i];
-		return (all);
 	}
-	all = malloc(new_size);
-	if (all == NULL)
-		return (NULL);
-	for (i = 0; i < new_size; i++)
-		((char *)all)[i] = ((char *)ptr)[i];
+	else
+	{
+		all = malloc(new_size);
+		if (all == NULL)
+			return (NULL);
+		for (i = 0; i < new_size; i++)
+			((char *)all)[i] = ((char *)ptr)[i];
+	}
+	free(ptr);
 	return (all);
 }
