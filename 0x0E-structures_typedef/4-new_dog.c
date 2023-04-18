@@ -10,15 +10,18 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
+	int namelen = 0, ownerlen = 0;
 
-	d = malloc(sizeof(*d));
+	while (name[namelen])
+		namelen++;
+	while (owner[ownerlen])
+		ownerlen++;
+
+	d = malloc(sizeof(char) * (namelen + ownerlen) + sizeof(float));
 	if (d == NULL)
 		return (NULL);
-	if (name)
-		d->name = name;
-	if (age)
-		d->age = age;
-	if (owner)
-		d->owner = owner;
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
 	return (d);
 }
