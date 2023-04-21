@@ -14,8 +14,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	char *s;
 
 	va_start(args, n);
-	if (n == 0)
-		printf("");
 	while (i < (int) n)
 	{
 		s = va_arg(args, char*);
