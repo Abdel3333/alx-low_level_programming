@@ -2,22 +2,45 @@
 #include <stdio.h>
 #include <stddef.h>
 /**
- * print_strings - prints all parameters
- * @separator: caracter separator
- * @n: first arg
+ * print_all - prints anything
+ * @format: format
  * Return: nothing
  */
-void print_strings(const char *separator, const unsigned int n, ...)
+void print_all(const char *const format, ...)
 {
 	va_list args;
 	int i = 0;
+	char *s;
 
-	va_start(args, n);
-	while (i < (int) n)
+	va_start(args, format);
+	while (format[i])
 	{
-		printf("%s", (va_arg(args, char*) != NULL ? va_arg(args, char*) : "(nil)"));
-		if (i + 1 < (int) n && separator != NULL)
-			printf("%s", separator);
+		switch (format[i])
+		{
+			case 'c':
+				printf("%c", va_arg(args, int));
+				break;
+			case 's':
+				s = va_arg(args, char*);
+				if (s != NULL)
+				{
+					printf("%s", s);
+					break;
+				}
+				printf("(nil)");
+				break;
+			case 'i':
+				printf("%i", va_arg(args, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(args, double));
+				break;
+			default:
+				break;
+		}
+		if (format[i + 1] && (format[i] == 'c' || format[i] == 'i'
+		|| format[i] == 'f' || format[i] == 's'))
+			printf(", ");
 		i++;
 	}
 	va_end(args);
