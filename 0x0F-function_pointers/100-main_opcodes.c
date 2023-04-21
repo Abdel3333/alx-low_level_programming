@@ -1,35 +1,27 @@
 #include <stdio.h>
 #include <stddef.h>
-#include "3-calc.h"
 #include <stdlib.h>
 #include <string.h>
 /**
- * main - prints the result of the operation, followed by a new line
+ * main - prints  the opcodes of its own main function
  * @argc: an integer for numbers of arguments
  * @argv: a pointer array
  * Return: an integer
  */
 int main(int argc, char **argv)
 {
-	int cal;
+	int opc = atoi(argv[1]);
 
-	if (argc != 4)
+	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(1);
 	}
-	if (strlen(argv[2]) != 1 || (argv[2][0] != '+' && argv[2][0] != '-' &&
-	argv[2][0] != '*' && argv[2][0] != '/' && argv[2][0] != '%'))
+	if (opc < 0)
 	{
 		printf("Error\n");
-		exit(99);
+		exit(2);
 	}
-	if (atoi(argv[3]) == 0 && (argv[2][0] == '/' || argv[2][0] == '%'))
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	cal = get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3]));
-	printf("%d\n", cal);
+	printf("%x\n", opc);
 	return (0);
 }
