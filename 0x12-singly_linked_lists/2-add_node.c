@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * *add_node - adds a new node at the beginning of a list_t list 
+ * *add_node - adds a new node at the beginning of a list_t list
  * @head: pointer to first node of the list
  * @str: pointer to the string
  * Return: address of the new element or NULL
@@ -15,10 +15,10 @@ list_t *add_node(list_t **head, const char *str)
 
 	node = malloc(sizeof(list_t));
 	if (node == NULL)
-		return NULL;
+		return (NULL);
 	node->str = strdup(str);
 	node->len = strlen(str);
 	node->next = *head;
 	*head = node;
-	return (node); 
+	return (node);
 }
